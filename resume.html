@@ -1,0 +1,280 @@
+ <!-- Save this file as resume.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Your Name — Resume</title>
+
+    <style>
+        :root{
+            --bg:#f7f8fb;
+            --card:#ffffff;
+            --accent:#0b6cff;
+            --muted:#6b7280;
+            --maxw:900px;
+            --pad:22px;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+
+        body{
+            background:var(--bg);
+            color:#111827;
+            margin:0;
+            padding:40px 16px;
+            display:flex;
+            justify-content:center;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+
+        .container{
+            width:100%;
+            max-width:var(--maxw);
+        }
+
+        .card{
+            background:var(--card);
+            border-radius:12px;
+            box-shadow:0 8px 30px rgba(15,23,42,0.06);
+            padding:var(--pad);
+            box-sizing:border-box;
+        }
+
+        header{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:12px;
+            margin-bottom:18px;
+        }
+
+        .title{
+            display:flex;
+            flex-direction:column;
+        }
+        .name{
+            font-size:1.35rem;
+            font-weight:700;
+            letter-spacing: -0.2px;
+        }
+        .tagline{
+            color:var(--muted);
+            font-size:0.95rem;
+        }
+
+        .controls{
+            text-align:right;
+        }
+        .print-btn{
+            display:inline-block;
+            background:var(--accent);
+            color:#fff;
+            border-radius:8px;
+            padding:8px 12px;
+            text-decoration:none;
+            font-weight:600;
+            font-size:0.9rem;
+            border:none;
+            cursor:pointer;
+        }
+
+        main{
+            display:grid;
+            grid-template-columns: 1fr 320px;
+            gap:20px;
+        }
+
+        /* Left column (main content) */
+        .left {
+            padding-right:6px;
+        }
+
+        h2{
+            margin:0 0 10px 0;
+            font-size:1.05rem;
+            color:#0f172a;
+        }
+        .section{
+            margin-bottom:18px;
+            padding-bottom:10px;
+            border-bottom:1px dashed rgba(15,23,42,0.06);
+        }
+
+        /* Work item */
+        .work-item, .edu-item {
+            margin-bottom:12px;
+        }
+        .work-head{
+            display:flex;
+            justify-content:space-between;
+            gap:8px;
+            align-items:flex-start;
+        }
+        .company{
+            font-weight:600;
+        }
+        .role{
+            color:var(--muted);
+            font-size:0.98rem;
+        }
+        .dates{
+            color:var(--muted);
+            font-size:0.88rem;
+        }
+        .bullets{
+            margin:8px 0 0 0;
+            padding-left:18px;
+        }
+        .bullets li{ margin-bottom:6px; }
+
+        /* Right column (sidebar) */
+        .right {
+            background: linear-gradient(180deg, rgba(11,108,255,0.06), rgba(11,108,255,0.02));
+            padding:14px;
+            border-radius:8px;
+            height:fit-content;
+        }
+
+        .contact-item{
+            margin-bottom:10px;
+            font-size:0.95rem;
+            color:#0f172a;
+        }
+        .contact-item .muted{ color:var(--muted); font-size:0.9rem; display:block; }
+
+        .languages li { margin-bottom:6px; }
+
+        /* Print styles */
+        @media print {
+            body { background: #fff; padding:0; }
+            .card { box-shadow:none; border-radius:0; padding:0; }
+            header .controls, header .tagline { display:none; }
+            main { grid-template-columns: 1fr; gap:0; }
+            .right { background:transparent; padding:0; }
+            .section { border-bottom:1px solid #ddd; page-break-inside: avoid; }
+        }
+
+        /* Small screens */
+        @media (max-width:760px){
+            main{ grid-template-columns: 1fr; }
+            .controls { margin-top:10px; text-align:left; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <article class="card" role="article" aria-label="Resume">
+            <header>
+                <div class="title">
+                    <div class="name">Ka'Terious Ja'Brel McGraw</div>
+                    <div class="tagline">Shulter Driver (optional)</div>
+                </div>
+
+                <div class="controls">
+                    <!-- Printable link (opens print dialog) -->
+                    <button class="print-btn" onclick="window.print()" aria-label="Print Resume">Printable version / Print</button>
+                </div>
+            </header>
+
+            <main>
+                <!-- LEFT: main content -->
+                <section class="left">
+                    <!-- WORK EXPERIENCE -->
+                    <section class="section" aria-labelledby="work-heading">
+                        <h2 id="work-heading">Work Experience</h2>
+
+                        <!-- Example entry: copy & add more -->
+                        <div class="work-item">
+                            <div class="work-head">
+                                <div>
+                                    <div class="company">Hyundai Glovis</div>
+                                    <div class="role">Shulter Driver</div>
+                                </div>
+                                <div class="dates">Aug 2025 — Present</div>
+                            </div>
+                            <ul class="bullets" aria-label="Responsibilities">
+                                <li>I will be achieving my Associates Degree From Wallace in CIS .</li>
+                                <li>Coding, Web Building, Web Desgin.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Blank template for user to replicate -->
+                        <!--
+                        <div class="work-item">
+                            <div class="work-head">
+                                <div>
+                                    <div class="company">Company Name</div>
+                                    <div class="role">Job Title</div>
+                                </div>
+                                <div class="dates">Start — End</div>
+                            </div>
+                            <ul class="bullets">
+                                <li>Responsibility / Achievement</li>
+                            </ul>
+                        </div>
+                        -->
+                    </section>
+
+                    <!-- EDUCATION -->
+                    <section class="section" aria-labelledby="edu-heading">
+                        <h2 id="edu-heading">Education</h2>
+
+                        <div class="edu-item">
+                            <div class="work-head">
+                                <div>
+                                    <div class="company">Selma High  / Wallace Community College</div>
+                                    <div class="role">Computer Information System</div>
+                                </div>
+                                <div class="dates">2021/2024</div>
+                            </div>
+                            <div class="muted" style="margin-top:6px;">(Optional: GPA, honors, coursework)</div>
+                        </div>
+
+                        <!-- Add more education items as needed -->
+                    </section>
+                </section>
+
+                <!-- RIGHT: sidebar -->
+                <aside class="right" aria-label="Sidebar">
+                    <!-- CONTACT ME -->
+                    <section class="section" aria-labelledby="contact-heading" style="border-bottom:none;">
+                        <h2 id="contact-heading">Contact Me</h2>
+                        <div class="contact-item">
+                            <strong>Email</strong>
+                            <span class="muted">kateriousj.mcgraw@icloud.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Phone</strong>
+                            <span class="muted">(334) 431-8739</span>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Location</strong>
+                            <span class="muted">Selma, Alabama,</span>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Website / LinkedIn</strong>
+                            <span class="muted">https://github.com/KaTeriousJ/Kkaterious.git</span>
+                        </div>
+                    </section>
+
+                    <!-- LANGUAGE -->
+                    <section aria-labelledby="langs-heading" style="margin-top:12px;">
+                        <h2 id="langs-heading">Language</h2>
+                        <ul class="languages" style="list-style:none;padding-left:0;margin:6px 0 0 0;">
+                            <li><strong>English</strong> — Native / Fluent</li>
+                            <li><strong>Spanish</strong> — Conversational</li>
+                            <!-- Add or remove languages -->
+                        </ul>
+                    </section>
+                </aside>
+            </main>
+        </article>
+
+        <!-- small footer / printable note -->
+        <p style="text-align:center;color:var(--muted);font-size:0.88rem;margin-top:12px;">
+            Tip: Click "Printable version / Print" to print or save as PDF.
+        </p>
+    </div>
+</body>
+</html>
